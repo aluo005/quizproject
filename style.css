@@ -6,6 +6,10 @@
     --color-dark-green: #182c25;
     --color-dark-gray: #DCDCDC;
     --color-gray-green: #5E716A;
+    --color-red: #e31b17;
+    --color-light-red: #FFD6D0;
+    --color-green: #00c476;
+    --color-green-light: #ddffdd;
     
     --transition: all 300ms ease;
 
@@ -111,6 +115,16 @@ nav button {
     transform: var(--transition);
 }
 
+.nav__link:hover {
+    color: var(--color-gray-green);
+    transition: all 0.3s ease;
+}
+
+.nav__link2:hover {
+    color: var(--color-gray-green);
+    transition: all 0.3s ease;
+}
+
 .avatar {
     width: 2.5rem;
     height: 2.5rem;
@@ -144,6 +158,7 @@ nav button {
     flex-direction: column;
     font-weight: 600;
     box-shadow: 0 3rem 3rem rgba(0,0,0,0.1);
+    background: var(--color-white);
     visibility: hidden;
     opacity: 0;
     transition: var(--transition);
@@ -162,11 +177,105 @@ nav button {
 
 .nav__profile ul li a {
     padding: 1rem;
-    background: var(--color-white);
     display: block;
     width: 100%;
 }
 
+@media screen and (max-width: 1024px) {
+    nav button {
+        display: inline-block;
+        font-size: 1.5rem;
+        background: transparent;
+        color: var(--color-dark-green);
+        cursor: pointer;
+    }
+
+    nav button#close__nav-btn {
+        display: none;
+    }
+
+    .nav__container {
+        position: relative;
+    }
+
+    .nav__items {
+        position: absolute;
+        flex-direction: column;
+        top: -1000px;
+        right: 0;
+        width: 100%;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 0;
+        box-shadow: -2rem 3rem 7rem rgba(0,0,0,0.5);
+        opacity: 0;
+        z-index: -1;
+        transition: all 0.5s ease;
+    }
+
+    .nav__items.active {
+        top: 100%;
+        opacity: 1;
+        transition: all 0.5 ease;
+        z-index: 99;
+    }
+
+    .nav__items li {
+        width: 100%;
+        height: 3.75rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav__items li a {
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--color-white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+    }
+
+    .nav__profile {
+        border-radius: 0;
+        top: 100%;
+        width: 100%;
+        height: 100%;
+        background: var(--color-white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 5px solid #D3D3D3;
+    }
+
+    .nav__profile .avatar {
+        border: 0;
+    }
+
+    .nav__profile ul {
+        width: 100%;
+        top: 101%;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .nav__profile ul li a {
+        color: var(--color-dark-green);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    nav button#open__nav-btn.is-active {
+        display: none;
+    }
+
+    nav button#close__nav-btn.is-active {
+        display: inline-block;
+    }
+}
 
 /*=============================Homepage============================*/
 .homepage {
@@ -267,5 +376,249 @@ nav button {
         width: 100%;
         margin-top: 25px;
         padding: 0;
+    }
+}
+
+/*================================Search============================*/
+
+.search__bar {
+    margin-top: 3rem;
+}
+
+.search__bar-container {
+    position: relative;
+    width: 50%;
+    background: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 0.6rem 1rem;
+    border-radius: 20px;
+    color: var(--color-dark-green);
+}
+
+.search__bar-container > div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.search__bar input {
+    background: transparent;
+    margin-left: 0.8rem;
+    padding: 0.5rem 0;
+    width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+    .search__bar-container {
+        width: 80%;
+    }
+}
+
+/*================================Button Styles==============================*/
+.btn {
+    display: inline-block;
+    width: fit-content;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--color-primary);
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--color-white);
+    transition: var(--transition);
+}
+
+/*================================Quiz Title==============================*/
+.quizdetails {
+    margin: 6rem 0 2rem;
+}
+
+.quizdetails__container {
+    width: 50%;
+    background: var(--color-white);
+    border-radius: 10px;
+    padding: 3rem 3rem 3rem;
+}
+
+.quiz__author {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 1rem;
+}
+
+.quiz__author-info {
+    padding-left: 10px;
+}
+
+.quiz__author-avatar {
+    width: 2.7rem;
+    height: 2.7rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.quizdetails__container p {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .quizdetails__container {
+        width: 80%;
+    }
+    
+}
+
+@media screen and (max-width: 760px) {
+    .quizdetails__container {
+        width: 90%;
+    }
+    
+    .quizdetails__container p {
+        font-size: 0.8rem;
+    }
+
+    .quizdetails__container h1 {
+        font-size: 2rem;
+    }
+}
+
+/*================================Browse Quizzes==============================*/
+.browsequizzes__container {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 1rem;
+    width: 50%;
+}
+
+.browsequiz__info h4{
+    font-size: 0.9rem;
+    color: var(--color-gray-green);
+    margin-bottom: 2rem;
+}
+
+.browsequiz__author {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.browsequiz__author img {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.browsequiz__author h4 {
+    padding-left: 10px;
+}
+
+.browsequiz__article {
+    background: var(--color-white);
+    border-radius: 6px;
+    padding: 1rem 2rem 2rem;
+    cursor: pointer;
+    box-shadow: 0.2rem 0.2rem 0.2rem rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.browsequiz__article:hover {
+    border-bottom: 5px solid var(--color-primary);
+}
+
+@media screen and (max-width: 800px) {
+    .browsequizzes__container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 80%;
+    }
+
+    @media screen and (max-width: 540px) {
+        .browsequizzes__container{
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            width: 90%;
+        }
+    }
+}
+
+/*================================General Form==============================*/
+.form__section {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.form__section-container {
+    width: 40%;
+}
+
+.alert__message {
+    padding: 0.8rem 1.4rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+.alert__message.error {
+    background: var(--color-light-red);
+    color: var(--color-red);
+}
+
+.alert__message.error {
+    background: var(--color-light-red);
+    color: var(--color-red);
+}
+
+.alert__message.success {
+    background: var(--color-green-light);
+    color: var(--color-green);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form__control {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+input[type="password"], input[type="text"], input[type="email"], textarea, select {
+    padding: 0.8rem 1.4rem;
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0.2rem 0.2rem 0.2rem rgba(0,0,0,0.1);
+    resize: none;
+}
+
+.form__section small {
+     margin-top: 1rem;
+     display: block;
+}
+
+.form__section small a {
+    color: var(--color-primary);
+}
+
+@media screen and (max-width:1024px) {
+    .form__section-container {
+        width: 60%;
+    }
+
+    @media screen and (max-width: 540px) {
+        .form__section-container {
+            width: 80%;
+        }
     }
 }
