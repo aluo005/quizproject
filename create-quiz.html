@@ -14,7 +14,7 @@
 </head>
 <body>
 <!-- ====================================NAV====================================-->
-    <nav class="navbar">
+    <nav class="createquiz__nav">
         <div class="container nav__container">
             <a href="index.html" class="nav__logo">Quizzy</a>
             <ul class="nav__items">
@@ -41,15 +41,22 @@
                 </li>
             </ul>
 
-            <button id="open__nav-btn"><i class="fa-solid fa-bars"></i></button>
-            <button id="close__nav-btn"><i class="fa-solid fa-xmark"></i></button>
+            <button id="open__nav-btn" class="nav__button"><i class="fa-solid fa-bars"></i></button>
+            <button id="close__nav-btn" class="nav__button"><i class="fa-solid fa-xmark"></i></button>
         </div>
     </nav>
 <!--====================================END OF NAV====================================-->
 
+<nav id="createquiz__secondnav">
+    <div class="createquiz__title2">
+        <h2>Create Quiz</h2>
+        <button type="submit" class="btn">Create</button>
+    </div>
+</nav>
+
 <section class="createquiz">
     <div class="container createquiz-container">
-        <form action="">
+        <form action="" id="submitQuizForm">
             <div class="createquiz__title">
                 <h2>Create Quiz</h2>
                 <button type="submit" class="btn">Create</button>
@@ -59,23 +66,35 @@
             </div>
             <input type="text" placeholder="Enter Title">
             <textarea rows="3" placeholder="Description"></textarea>
-            <div class="createquiz__section">
-                <div class="input__dividers">
-                    <h4>Question:</h4>
-                    <input name="question" type="text">
-                </div>
-                <div class="input__dividers">
-                    <h4>Answers:</h4>
-                    <div id="mulitplechoice__inputs"></div>
-                    <button id="add__answers-btn" class="btn">Add Answer</button>
-                </div>
+            <div class="createquiz__section-container">
+                <!-- <div class="createquiz__section">
+                    <div class="input__dividers">
+                        <h4>Question:</h4>
+                        <input name="question" type="text">
+                    </div>
+                    <div class="input__dividers">
+                        <h4>Answers:</h4>
+                        <input type="text">
+                        <div id="multiplechoice__inputs">
+                            <div class="answer__field">
+                                <div class="answer__input">
+                                    <h4>O </h4>
+                                    <input type="text">
+                                </div>
+                                <button>X</button>
+                            </div>
+                            <h5 class="alert__message error">Sorry, 5 choices max</h5>
+                        </div>
+                        <button class="add__answers-btn btn">Add Answer</button>
+                    </div>
+                </div> -->
             </div>
-            <button type="submit" class="btn">Create</button>
+            <button class="add__question-btn btn">+ Add Question</button>
         </form>
     </div>
 </section>
 
 
-    <script src="./main.js"></script>
+<script src="./main.js"></script>
 </body>
 </html>
