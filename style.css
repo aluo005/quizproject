@@ -639,7 +639,7 @@ input[type="password"], input[type="text"], input[type="email"], textarea, selec
     position: sticky;
     top: 0;
     left: 0;
-    display: flex;
+    display: none;
     justify-content: space-around;
     align-items: center;
     width: 100%;
