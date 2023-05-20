@@ -697,9 +697,11 @@ input[type="password"], input[type="text"], input[type="email"], textarea, selec
 
 .createquiz__section {
     background: var(--color-dark-gray);
-    padding: 1.5rem 1.5rem;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
     margin-bottom: 2rem;
     border-radius: 10px;
+    opacity: 1;
+    transition: opacity 0.5s ease;
 }
 
 .answer__field {
@@ -721,6 +723,28 @@ input[type="password"], input[type="text"], input[type="email"], textarea, selec
     background: transparent;
     color: var(--color-dark-green);
     cursor: pointer;
+}
+
+.delete__answer-btn:hover {
+    color: var(--color-red);
+    transition: all 200ms ease;
+}
+
+.delete__question-btn {
+    font-size: 1.2rem;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* .delete__question-btn:hover {
+    color: var(--color-red);
+} */
+
+.createquiz__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 /* Navbar is very hardcoded, need to fix later*/
