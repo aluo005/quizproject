@@ -519,6 +519,15 @@ nav button {
     padding-left: 10px;
 }
 
+.browsequiz__author h5 {
+    padding-left: 7px;
+}
+
+
+.browsequiz__title h2 {
+    font-size: 1.5rem;
+}
+
 .browsequiz__article {
     background: var(--color-white);
     border-radius: 6px;
@@ -600,6 +609,12 @@ input[type="password"], input[type="text"], input[type="email"], textarea, selec
     border-radius: 8px;
     box-shadow: 0.2rem 0.2rem 0.2rem rgba(0,0,0,0.1);
     resize: none;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-dark-green)
+}
+
+textarea::placeholder, input::placeholder {
+    font-family: 'Montserrat', sans-serif;
 }
 
 .form__section small {
@@ -774,6 +789,231 @@ input[type="password"], input[type="text"], input[type="email"], textarea, selec
         }
     }
     
+}
+
+/*========================================Dashboard==================================*/
+.dashboard {
+    margin-top: 3rem;
+}
+
+.dashboard__container {
+    display: grid;
+    grid-template-columns: 14rem auto;
+    gap: 2.5rem;
+    background: transparent;
+    width: 60rem;
+}
+
+.dashboard aside a {
+    background-color: var(--color-white);
+    color: var(--color-dark-green);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1.3rem;
+}
+
+.dashboard aside ul li:not(:last-child) a {
+    border-bottom: 1px solid var(--color-gray);
+}
+
+.dashboard aside a:hover h5, .dashboard aside a:hover i{
+    color: #a1e648;
+}
+
+.dashboard aside a.active h5, .dashboard aside a.active i{
+    color: var(--color-primary);
+}
+
+.dashboard main {
+    margin-left: 1.5rem;
+}
+
+.dashboard main h2 {
+    margin: 0 0 2rem 0;
+}
+
+.sidebar__toggle {
+    display: none;
+}
+
+.view__quizzes-container .browsequiz__article {
+    padding: 0.25rem 1rem 1rem 2rem;
+    margin-top: 1rem;
+}
+
+.view__quizzes-container .browsequiz__title h2 {
+    padding-top: 1rem;
+}
+
+.view__quizzes-container .browsequiz__author img {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 1024px) {
+    .dashboard__container {
+        width: 48rem;
+        gap: 1.5rem;
+        grid-template-columns: 4.5rem auto;
+        padding: 0;
+    }
+
+    .dashboard aside h5 {
+        display: none;
+    }
+
+    @media screen and (max-width: 780px) {
+        .dashboard {
+            margin-top: 1rem;
+        }
+
+        .dashboard__container {
+            width: 90%;
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+
+        .dashboard main {
+            margin: 0;
+        }
+
+        .dashboard main h2 {
+            margin-top: 1rem;
+        }
+
+        #dashboard__view__title {
+            display: flex;
+            justify-content: center;
+        }
+
+        .dashboard aside {
+            position: fixed;
+            box-shadow: 2rem 0 4rem rgba(0,0,0,0.4);
+            left: -100%;
+            height: 100vh;
+            transition: var(--transition);
+            background: var(--color-white);
+        }
+
+        .dashboard aside.active {
+            left: 0;
+        }
+
+        .dashboard .sidebar__toggle {
+            display: inline-block;
+            background: var(--color-white);
+            color: var(--color-dark-green);
+            position: fixed;
+            right: 0;
+            bottom: 4rem;
+            z-index: 1;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50% 0 0 50%;
+            box-shadow: -1rem 0 2rem rgba(0,0,0,0.2);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .dashboard aside a h5 {
+            display: inline-block;
+        }
+
+        #hide__sidebar-btn {
+            display: none;
+        }
+
+        #show__sidebar-btn {
+            display: inline-block;
+        }
+
+        #hide__sidebar-btn.is-active{
+            display: inline-block;
+        }
+
+        #show__sidebar-btn.is-active{
+            display: none;
+        }
+    }
+    
+}
+
+/*==========================================My Quizzes Dashboard=================================*/
+
+.dashboard__article {
+    background: var(--color-white);
+    border-radius: 6px;
+    padding: 1rem 2rem 2rem;
+    cursor: pointer;
+    box-shadow: 0.2rem 0.2rem 0.2rem rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashboard__article:hover {
+    border-bottom: 5px solid var(--color-primary);
+}
+
+.dashboard__article-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dashboard__article-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 1.5rem;
+    padding-right: 1rem;
+}
+
+.dashboard__article-btn a {
+    position: relative;
+}
+
+.dashboard__article-btn a i {
+    color: var(--color-dark-green);
+}
+
+.dashboard__article-btn a i:hover {
+    color: var(--color-primary);
+}
+
+#tooltip {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    font-size: 0.5rem;
+    transform: translateX(-50%);
+    background-color: #000;
+    color: var(--color-white);
+    white-space: nowrap;
+    padding: 5px 10px;
+    border-radius: 6px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#tooltip::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    border: 5px solid;
+    border-color: #000 #0000 #0000 #0000;
+}
+
+.dashboard__article-btn a:hover #tooltip{
+    top: -75%;
+    visibility: visible;
+    opacity: 1;
 }
 
 

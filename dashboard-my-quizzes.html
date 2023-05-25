@@ -47,59 +47,56 @@
     </nav>
 <!--====================================END OF NAV====================================-->
 
-<nav id="createquiz__secondnav">
-    <div class="createquiz__title2">
-        <h2>Create Quiz</h2>
-        <button type="submit" class="btn">Create</button>
-    </div>
-</nav>
-
-<section class="createquiz">
-    <div class="container createquiz-container">
-        <form action="" id="submitQuizForm">
-            <div class="createquiz__title">
-                <h2>Create Quiz</h2>
-                <button type="submit" class="btn">Create</button>
-            </div>
-            <div class="alert__message error">
-                <p>This is an error message</p>
-            </div>
-            <input type="text" placeholder="Enter Title">
-            <textarea rows="3" placeholder="Description"></textarea>
-            <div class="createquiz__section-container">
-                <!-- <div class="createquiz__section">
-                    <div class="createquiz__header">
-                        <h4>1. </h4>
-                        <button class="delete__question-btn"><i class="fa-solid fa-trash"></i></button>
-                    </div>
-                    <div class="input__dividers">
-                        <h4>Question:</h4>
-                        <input name="question" type="text">
-                    </div>
-                    <div class="input__dividers">
-                        <h4>Answers:</h4>
-                        <input type="text">
-                        <div id="multiplechoice__inputs">
-                            <div class="answer__field">
-                                <div class="answer__input">
-                                    <h4>O </h4>
-                                    <input type="text">
-                                </div>
-                                <button>X</button>
-                            </div>
-                            <h5 class="alert__message error">Sorry, 5 choices max</h5>
+<section class="dashboard">
+    <div class="container dashboard__container">
+        <button id="show__sidebar-btn" class="sidebar__toggle"><i class="fa-solid fa-chevron-right"></i></button>
+        <button id="hide__sidebar-btn" class="sidebar__toggle"><i class="fa-solid fa-chevron-left"></i></button>
+        <aside>
+            <ul>
+                <li><a href="dashboard-quizzes.html"><i class="fa-solid fa-lightbulb"></i>
+                    <h5>Viewed Quizzes</h5>
+                </a></li>
+                <li><a href="dashboard-my-quizzes.html" class="active"><i class="fa-solid fa-clipboard-question"></i>
+                    <h5>My Quizzes</h5>
+                </a></li>
+            </ul>
+        </aside>
+        <main>
+            <h2 id="dashboard__view__title">Created Quizzes</h2>
+            <div class="view__quizzes-container">
+                <article class="dashboard__article">
+                    <div class="dashboard__article-container">
+                        <div class="browsequiz__title">
+                            <h2>AP Biology Pop Quiz</h2>
                         </div>
-                        <button class="add__answers-btn btn">Add Answer</button>
+                        <div class="browsequiz__author">
+                            <img src="./images/avatar1.png">
+                            <h5>Albert Luo</h5>
+                        </div>
                     </div>
-                </div> -->
+                    <div class="dashboard__article-btn">
+                        <a href="view-responses.html" id="view__responses-btn">
+                            <span id="tooltip">View Responses</span>
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
+                        <a href="edit-quiz.html" id="edit__quiz-btn">
+                            <span id="tooltip">Edit Quiz</span>
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                        <a href="delete-quiz.html" id="delete__quiz-btn">
+                            <span id="tooltip">Delete Quiz</span>
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                    </div>
+                </article>
             </div>
-            <button class="add__question-btn btn">+ Add Question</button>
-        </form>
+        </main>
     </div>
 </section>
 
+<script src="./javascript/main.js"></script>
+<script src="./javascript/dashboard-sidebar.js"></script>
+<script src="./javascript/article-click.js"></script>
 
-<script src="./javascript/create-quiz.js"></script>
-<script src="./javascript/quiz-nav.js"></script>
 </body>
 </html>

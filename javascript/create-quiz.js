@@ -2,11 +2,6 @@ const openNavBtn = document.querySelector('#open__nav-btn');
 const closeNavBtn = document.querySelector('#close__nav-btn');
 const navItems = document.querySelector('.nav__items');
 
-//Creating quiz
-const addAnswerBtn = document.querySelector('.add__answers-btn');
-const createQuizSectionContainer = document.querySelector('.createquiz__section-container');
-const addQuestionBtn = document.querySelector('.add__question-btn');
-
 openNavBtn.addEventListener('click', function() {
     openNavBtn.classList.toggle('is-active')
     closeNavBtn.classList.toggle('is-active')
@@ -20,6 +15,11 @@ closeNavBtn.addEventListener('click', function() {
 })
 
 //===================================Creating quiz===========================================
+//Creating quiz
+const addAnswerBtn = document.querySelector('.add__answers-btn');
+const createQuizSectionContainer = document.querySelector('.createquiz__section-container');
+const addQuestionBtn = document.querySelector('.add__question-btn');
+
 const clonedQuizCardNodes = [];
 const clonedTrashButtonNodes = [];
 const clonedQuestionNum = [];
@@ -280,19 +280,3 @@ function createQuestionClone() {
     createQuizSectionContainer.appendChild(createQuizSectionClone);
     clonedQuizCardNodes.push(createQuizSectionClone);
 }
-
-
-//================================Create Navbar for Quiz=======================================
-
-window.addEventListener('scroll', function() {
-    const navSelector = this.document.getElementById('createquiz__secondnav');
-    const quizTitle = this.document.querySelector('.createquiz__title');
-    if(this.window.scrollY > 80) {
-        navSelector.style.display = 'flex';
-        quizTitle.style.display = 'none';
-    } else {
-        navSelector.style.display = 'none';
-        quizTitle.style.display = 'flex';
-    }
-})
-
